@@ -1,0 +1,626 @@
+<!DOCTYPE html> <!-- Farouk -->
+<html lang="ar" dir="rtl"> <!-- Farouk -->
+<head> <!-- Farouk -->
+  <meta charset="UTF-8"> <!-- Farouk -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Farouk -->
+  <title>الشيخ عبد الرحمن الزواوي — الموقع الرسمي</title> <!-- Farouk -->
+  <meta name="description" content="الموقع الرسمي للشيخ عبد الرحمن الزواوي — تلاوات القرآن الكريم، استماع وتحميل مجاني"> <!-- Farouk -->
+  <meta property="og:title"       content="الشيخ عبد الرحمن الزواوي"> <!-- Farouk -->
+  <meta property="og:description" content="استمع وحمّل تلاوات القرآن الكريم بصوت الشيخ عبد الرحمن الزواوي"> <!-- Farouk -->
+  <meta property="og:type"        content="website"> <!-- Farouk -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>"> <!-- Farouk -->
+  <link rel="stylesheet" href="./style.css"> <!-- Farouk -->
+  <!-- Hidden global audio element --> <!-- Farouk -->
+  <audio id="global-audio" preload="metadata"></audio> <!-- Farouk -->
+</head> <!-- Farouk -->
+<body> <!-- Farouk -->
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ --> <!-- Farouk -->
+<nav class="navbar"> <!-- Farouk -->
+  <div class="navbar-inner"> <!-- Farouk -->
+
+    <!-- Logo --> <!-- Farouk -->
+    <div class="navbar-logo" data-goto="home" onclick="showPage('home')"> <!-- Farouk -->
+      <img class="logo-icon logo-photo" src="./assets/sheikh-logo.jpg" alt="صورة الشيخ عبد الرحمن الزواوي"> <!-- Farouk -->
+      <span class="logo-text">الشيخ عبد الرحمن الزواوي</span> <!-- Farouk -->
+    </div> <!-- Farouk -->
+
+    <!-- Desktop nav links --> <!-- Farouk -->
+    <div class="navbar-links"> <!-- Farouk -->
+      <span class="nav-link active" data-page="home">الرئيسية</span> <!-- Farouk -->
+      <span class="nav-link"       data-page="quran">المصحف</span> <!-- Farouk -->
+      <span class="nav-link"       data-page="downloads">التحميلات</span> <!-- Farouk -->
+      <span class="nav-link"       data-page="videos">الفيديوهات</span> <!-- Farouk -->
+      <span class="nav-link"       data-page="contact">اتصل بنا</span> <!-- Farouk -->
+    </div> <!-- Farouk -->
+
+    <!-- Actions --> <!-- Farouk -->
+    <div class="navbar-actions"> <!-- Farouk -->
+      <button class="btn-icon" id="btn-theme" title="تبديل الوضع">🌙</button> <!-- Farouk -->
+      <button class="btn-icon btn-menu" id="btn-menu" title="القائمة">☰</button> <!-- Farouk -->
+    </div> <!-- Farouk -->
+  </div> <!-- Farouk -->
+
+  <!-- Mobile menu --> <!-- Farouk -->
+  <div class="mobile-menu" id="mobile-menu"> <!-- Farouk -->
+    <span class="mobile-nav-link active" data-page="home">🏠 الرئيسية</span> <!-- Farouk -->
+    <span class="mobile-nav-link"       data-page="quran">📖 المصحف</span> <!-- Farouk -->
+    <span class="mobile-nav-link"       data-page="downloads">⬇️ التحميلات</span> <!-- Farouk -->
+    <span class="mobile-nav-link"       data-page="videos">📺 الفيديوهات</span> <!-- Farouk -->
+    <span class="mobile-nav-link"       data-page="contact">📞 اتصل بنا</span> <!-- Farouk -->
+  </div> <!-- Farouk -->
+</nav> <!-- Farouk -->
+
+<!-- ============================================================
+     PAGE: HOME
+     ============================================================ --> <!-- Farouk -->
+<div id="page-home" class="page active"> <!-- Farouk -->
+
+  <!-- HERO --> <!-- Farouk -->
+  <section class="hero"> <!-- Farouk -->
+    <div class="hero-particles" id="hero-particles"></div> <!-- Farouk -->
+    <div class="hero-content"> <!-- Farouk -->
+
+      <!-- Avatar --> <!-- Farouk -->
+      <div class="avatar-wrap"> <!-- Farouk -->
+        <img class="avatar avatar-photo" src="./assets/sheikh-logo.jpg" alt="صورة الشيخ عبد الرحمن الزواوي"> <!-- Farouk -->
+        <div class="avatar-badge">● متاح الآن</div> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <!-- Glitch title --> <!-- Farouk -->
+      <h1 class="glitch-text" data-text="الشيخ عبد الرحمن الزواوي">الشيخ عبد الرحمن الزواوي</h1> <!-- Farouk -->
+
+      <!-- Typing animation --> <!-- Farouk -->
+      <div class="typing-line"> <!-- Farouk -->
+        <span class="typing-text" id="typing-text"></span> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <!-- Bio --> <!-- Farouk -->
+      <p class="hero-bio"> <!-- Farouk -->
+        الشيخ عبد الرحمن الزواوي، قارئ القرآن الكريم بأجمل الأصوات وأعذبها.<br> <!-- Farouk -->
+        يُقدّم تلاوات خاشعة للقرآن الكريم كاملاً، ويُحيي الشعائر والمناسبات الدينية.<br> <!-- Farouk -->
+        متاح للاستماع والتحميل المجاني. <!-- Farouk -->
+      </p> <!-- Farouk -->
+
+      <!-- CTA buttons --> <!-- Farouk -->
+      <div class="hero-buttons"> <!-- Farouk -->
+        <button class="btn btn-primary" data-goto="quran">▶ استمع للمصحف</button> <!-- Farouk -->
+        <a class="btn btn-secondary" href="https://drive.google.com/drive/folders/1PZtZ8SOg0EHNujKyTYuJynPJzmAO-3bZ" target="_blank" rel="noopener">⬇ تحميل المصحف كاملاً</a> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+    </div> <!-- Farouk -->
+  </section> <!-- Farouk -->
+
+  <!-- SOCIAL LINKS --> <!-- Farouk -->
+  <section class="section-muted"> <!-- Farouk -->
+    <div class="container"> <!-- Farouk -->
+      <h2 class="section-title">تابعونا على منصات التواصل الاجتماعي</h2> <!-- Farouk -->
+      <div class="social-grid"> <!-- Farouk -->
+        <a class="social-card sc-facebook"   href="https://www.facebook.com/AbdElRahmanElzwawy"         target="_blank" rel="noopener"><span class="sc-icon">📘</span>فيسبوك</a> <!-- Farouk -->
+        <a class="social-card sc-youtube"    href="https://www.youtube.com/channel/UCmEQwRROa-hTlySNvMtFWnw" target="_blank" rel="noopener"><span class="sc-icon">▶️</span>يوتيوب</a> <!-- Farouk -->
+        <a class="social-card sc-twitter"    href="https://twitter.com/Sheikh_Elzwawy"               target="_blank" rel="noopener"><span class="sc-icon">🐦</span>إكس (تويتر)</a> <!-- Farouk -->
+        <a class="social-card sc-instagram"  href="https://www.instagram.com/abdelrahman.elzwawy/"   target="_blank" rel="noopener"><span class="sc-icon">📷</span>إنستجرام</a> <!-- Farouk -->
+        <a class="social-card sc-telegram"   href="https://t.me/abdelrahmanelzwawy"                  target="_blank" rel="noopener"><span class="sc-icon">✈️</span>تليجرام</a> <!-- Farouk -->
+        <a class="social-card sc-telegram2"  href="https://t.me/shelzwawy"                           target="_blank" rel="noopener"><span class="sc-icon">✈️</span>تليجرام (2)</a> <!-- Farouk -->
+        <a class="social-card sc-tiktok"     href="https://www.tiktok.com/@abdelrahman.elzwawy"      target="_blank" rel="noopener"><span class="sc-icon">🎵</span>تيك توك</a> <!-- Farouk -->
+        <a class="social-card sc-soundcloud" href="https://soundcloud.com/abdelrahmanelzwawy"        target="_blank" rel="noopener"><span class="sc-icon">🎧</span>ساوند كلاود</a> <!-- Farouk -->
+        <a class="social-card sc-map"        href="https://maps.app.goo.gl/VqNXrqVBTsYTkQi6A"        target="_blank" rel="noopener"><span class="sc-icon">📍</span>موقع المسجد</a> <!-- Farouk -->
+        <a class="social-card sc-whatsapp"   href="https://whatsapp.com/channel/"                    target="_blank" rel="noopener"><span class="sc-icon">💬</span>قناة واتساب</a> <!-- Farouk -->
+      </div> <!-- Farouk -->
+    </div> <!-- Farouk -->
+  </section> <!-- Farouk -->
+
+  <!-- AUDIO PLAYER SECTION --> <!-- Farouk -->
+  <section class="section"> <!-- Farouk -->
+    <div class="container-xs"> <!-- Farouk -->
+      <h2 class="section-title">🎵 استمع لتلاوات الشيخ</h2> <!-- Farouk -->
+      <p class="section-sub">مشغل صوتي متقدم مع جميع سور القرآن الكريم</p> <!-- Farouk -->
+
+      <!-- Player card --> <!-- Farouk -->
+      <div class="player"> <!-- Farouk -->
+        <div class="player-title"> <!-- Farouk -->
+          <h3 id="player-surah-name">سورة الفاتحة</h3> <!-- Farouk -->
+          <p  id="player-surah-meta">7 آية — مكية</p> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <!-- Seek --> <!-- Farouk -->
+        <div class="player-seek"> <!-- Farouk -->
+          <input type="range" class="audio-range" id="seek-range" min="0" max="100" step="0.5" value="0"> <!-- Farouk -->
+        </div> <!-- Farouk -->
+        <div class="player-time"> <!-- Farouk -->
+          <span id="time-current">00:00</span> <!-- Farouk -->
+          <span id="time-duration">--:--</span> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <!-- Controls --> <!-- Farouk -->
+        <div class="player-controls"> <!-- Farouk -->
+          <button class="ctrl-btn" id="btn-repeat"  title="تكرار">🔁</button> <!-- Farouk -->
+          <button class="ctrl-btn" id="btn-prev"    title="السابقة">⏭</button> <!-- Farouk -->
+          <button class="play-btn" id="play-btn"    title="تشغيل/إيقاف">▶</button> <!-- Farouk -->
+          <button class="ctrl-btn" id="btn-next"    title="التالية">⏮</button> <!-- Farouk -->
+          <a class="dl-link" id="player-dl" href="#" download title="تحميل">⬇</a> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <!-- Volume & Speed --> <!-- Farouk -->
+        <div class="player-bottom"> <!-- Farouk -->
+          <div class="vol-wrap"> <!-- Farouk -->
+            <span class="vol-icon">🔊</span> <!-- Farouk -->
+            <input type="range" class="audio-range" id="vol-range" min="0" max="1" step="0.05" value="1"> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="speed-wrap"> <!-- Farouk -->
+            <button class="speed-btn" data-speed="0.75">0.75x</button> <!-- Farouk -->
+            <button class="speed-btn active" data-speed="1">1x</button> <!-- Farouk -->
+            <button class="speed-btn" data-speed="1.25">1.25x</button> <!-- Farouk -->
+            <button class="speed-btn" data-speed="1.5">1.5x</button> <!-- Farouk -->
+            <button class="speed-btn" data-speed="2">2x</button> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <!-- Playlist --> <!-- Farouk -->
+      <div class="playlist"> <!-- Farouk -->
+        <div class="playlist-header">قائمة التشغيل — أبرز السور</div> <!-- Farouk -->
+        <div class="playlist-body" id="home-playlist"></div> <!-- Farouk -->
+        <div class="playlist-footer"> <!-- Farouk -->
+          <button class="btn" style="background:none;color:var(--primary);font-size:0.85rem;padding:0.25rem 0;" data-goto="quran"> <!-- Farouk -->
+            عرض جميع السور (114 سورة) ‹ <!-- Farouk -->
+          </button> <!-- Farouk -->
+        </div> <!-- Farouk -->
+      </div> <!-- Farouk -->
+    </div> <!-- Farouk -->
+  </section> <!-- Farouk -->
+
+  <!-- YOUTUBE SECTION --> <!-- Farouk -->
+  <section class="section-muted"> <!-- Farouk -->
+    <div class="container-sm"> <!-- Farouk -->
+      <h2 class="section-title">📺 قناة يوتيوب</h2> <!-- Farouk -->
+      <p class="section-sub">اشترك في القناة لمتابعة أحدث التلاوات والمقاطع</p> <!-- Farouk -->
+      <div style="border-radius:1.25rem;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--border);"> <!-- Farouk -->
+        <div class="video-embed"> <!-- Farouk -->
+          <iframe src="https://www.youtube.com/embed/videoseries?list=UUmEQwRROa-hTlySNvMtFWnw" title="قناة الشيخ عبد الرحمن الزواوي" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> <!-- Farouk -->
+        </div> <!-- Farouk -->
+      </div> <!-- Farouk -->
+      <div class="text-center mt-6"> <!-- Farouk -->
+        <a class="btn btn-danger" href="https://www.youtube.com/channel/UCmEQwRROa-hTlySNvMtFWnw" target="_blank" rel="noopener"> <!-- Farouk -->
+          ▶ اشترك في القناة <!-- Farouk -->
+        </a> <!-- Farouk -->
+      </div> <!-- Farouk -->
+    </div> <!-- Farouk -->
+  </section> <!-- Farouk -->
+
+  <!-- QUICK LINKS --> <!-- Farouk -->
+  <section class="section"> <!-- Farouk -->
+    <div class="container"> <!-- Farouk -->
+      <div class="card-grid-3"> <!-- Farouk -->
+        <div class="card glow-card" data-goto="quran"> <!-- Farouk -->
+          <div class="card-icon">📖</div> <!-- Farouk -->
+          <div class="card-title">المصحف الكامل</div> <!-- Farouk -->
+          <div class="card-desc">114 سورة — استماع وتحميل مجاني</div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+        <div class="card glow-card" data-goto="downloads"> <!-- Farouk -->
+          <div class="card-icon">⬇️</div> <!-- Farouk -->
+          <div class="card-title">التحميلات</div> <!-- Farouk -->
+          <div class="card-desc">تحميل ملفات المصحف بجودة عالية</div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+        <div class="card glow-card" data-goto="contact"> <!-- Farouk -->
+          <div class="card-icon">📞</div> <!-- Farouk -->
+          <div class="card-title">اتصل بنا</div> <!-- Farouk -->
+          <div class="card-desc">تواصل معنا عبر فيسبوك أو تليجرام</div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+      </div> <!-- Farouk -->
+    </div> <!-- Farouk -->
+  </section> <!-- Farouk -->
+
+</div><!-- /page-home --> <!-- Farouk -->
+
+<!-- ============================================================
+     PAGE: QURAN
+     ============================================================ --> <!-- Farouk -->
+<div id="page-quran" class="page"> <!-- Farouk -->
+  <div class="section"> <!-- Farouk -->
+    <div class="container"> <!-- Farouk -->
+
+      <div class="page-header"> <!-- Farouk -->
+        <div class="page-header-icon">📖</div> <!-- Farouk -->
+        <h1>المصحف الكريم</h1> <!-- Farouk -->
+        <p>بصوت الشيخ عبد الرحمن الزواوي — 114 سورة كاملة</p> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <!-- Inline player for quran page (shared audio element) --> <!-- Farouk -->
+      <div id="q-player-section" class="hidden" style="margin-bottom:2rem;"> <!-- Farouk -->
+        <div class="player"> <!-- Farouk -->
+          <div class="player-title"> <!-- Farouk -->
+            <h3 id="q-player-title">سورة الفاتحة</h3> <!-- Farouk -->
+            <p  id="q-player-meta">7 آية — مكية</p> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="player-seek"> <!-- Farouk -->
+            <input type="range" class="audio-range" id="q-seek-range" min="0" max="100" step="0.5" value="0"> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="player-time"> <!-- Farouk -->
+            <span id="q-time-current">00:00</span> <!-- Farouk -->
+            <span id="q-time-duration">--:--</span> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="player-controls"> <!-- Farouk -->
+            <button class="ctrl-btn" id="q-btn-repeat" title="تكرار">🔁</button> <!-- Farouk -->
+            <button class="ctrl-btn" id="q-btn-prev"   title="السابقة">⏭</button> <!-- Farouk -->
+            <button class="play-btn" id="q-play-btn"   title="تشغيل">▶</button> <!-- Farouk -->
+            <button class="ctrl-btn" id="q-btn-next"   title="التالية">⏮</button> <!-- Farouk -->
+            <a class="dl-link" id="q-player-dl" href="#" download title="تحميل">⬇</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="player-bottom"> <!-- Farouk -->
+            <div class="vol-wrap"> <!-- Farouk -->
+              <span class="vol-icon">🔊</span> <!-- Farouk -->
+              <input type="range" class="audio-range" id="q-vol-range" min="0" max="1" step="0.05" value="1"> <!-- Farouk -->
+            </div> <!-- Farouk -->
+            <div class="speed-wrap"> <!-- Farouk -->
+              <button class="speed-btn" data-speed="0.75">0.75x</button> <!-- Farouk -->
+              <button class="speed-btn active" data-speed="1">1x</button> <!-- Farouk -->
+              <button class="speed-btn" data-speed="1.25">1.25x</button> <!-- Farouk -->
+              <button class="speed-btn" data-speed="1.5">1.5x</button> <!-- Farouk -->
+              <button class="speed-btn" data-speed="2">2x</button> <!-- Farouk -->
+            </div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <!-- Search & filter --> <!-- Farouk -->
+      <div class="search-row"> <!-- Farouk -->
+        <div class="search-wrap"> <!-- Farouk -->
+          <span class="search-icon">🔍</span> <!-- Farouk -->
+          <input type="search" class="search-input" id="surah-search" placeholder="ابحث عن سورة..."> <!-- Farouk -->
+        </div> <!-- Farouk -->
+        <div class="filter-btns"> <!-- Farouk -->
+          <button class="filter-btn active" data-filter="all">الكل</button> <!-- Farouk -->
+          <button class="filter-btn"        data-filter="مكية">مكية</button> <!-- Farouk -->
+          <button class="filter-btn"        data-filter="مدنية">مدنية</button> <!-- Farouk -->
+        </div> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <div class="stats-line" id="surah-stats">يعرض 114 سورة</div> <!-- Farouk -->
+      <div class="surah-grid" id="surah-grid"></div> <!-- Farouk -->
+
+    </div> <!-- Farouk -->
+  </div> <!-- Farouk -->
+</div><!-- /page-quran --> <!-- Farouk -->
+
+<!-- ============================================================
+     PAGE: DOWNLOADS
+     ============================================================ --> <!-- Farouk -->
+<div id="page-downloads" class="page"> <!-- Farouk -->
+  <div class="section"> <!-- Farouk -->
+    <div class="container"> <!-- Farouk -->
+
+      <div class="page-header"> <!-- Farouk -->
+        <div class="page-header-icon">⬇️</div> <!-- Farouk -->
+        <h1>التحميلات</h1> <!-- Farouk -->
+        <p>حمّل تلاوات الشيخ مجاناً بأعلى جودة صوتية</p> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <!-- Main sources --> <!-- Farouk -->
+      <div class="dl-grid"> <!-- Farouk -->
+
+        <a class="dl-card glow-card" href="https://drive.google.com/drive/folders/1PZtZ8SOg0EHNujKyTYuJynPJzmAO-3bZ" target="_blank" rel="noopener"> <!-- Farouk -->
+          <div class="dl-card-icon" style="background:#16a34a;color:#fff;">📦</div> <!-- Farouk -->
+          <div> <!-- Farouk -->
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;"> <!-- Farouk -->
+              <span class="dl-card-title">المصحف الكريم كاملاً</span> <!-- Farouk -->
+              <span class="dl-card-badge">Drive</span> <!-- Farouk -->
+            </div> <!-- Farouk -->
+            <p class="dl-card-desc">تحميل المصحف الكريم كاملاً بصوت الشيخ عبد الرحمن الزواوي — جودة عالية MP3</p> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="dl-card-footer"> <!-- Farouk -->
+            <span class="dl-card-size">مجلد كامل</span> <!-- Farouk -->
+            <span class="dl-card-open">فتح ↗</span> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </a> <!-- Farouk -->
+
+        <a class="dl-card glow-card" href="https://soundcloud.com/abdelrahmanelzwawy" target="_blank" rel="noopener"> <!-- Farouk -->
+          <div class="dl-card-icon" style="background:#ff5500;color:#fff;">🎧</div> <!-- Farouk -->
+          <div> <!-- Farouk -->
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;"> <!-- Farouk -->
+              <span class="dl-card-title">قناة ساوند كلاود</span> <!-- Farouk -->
+              <span class="dl-card-badge">SoundCloud</span> <!-- Farouk -->
+            </div> <!-- Farouk -->
+            <p class="dl-card-desc">استمع وحمّل التلاوات مباشرة من ساوند كلاود</p> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="dl-card-footer"> <!-- Farouk -->
+            <span class="dl-card-size">متعدد الملفات</span> <!-- Farouk -->
+            <span class="dl-card-open">فتح ↗</span> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </a> <!-- Farouk -->
+
+        <a class="dl-card glow-card" href="https://www.youtube.com/channel/UCmEQwRROa-hTlySNvMtFWnw" target="_blank" rel="noopener"> <!-- Farouk -->
+          <div class="dl-card-icon" style="background:#dc2626;color:#fff;">▶️</div> <!-- Farouk -->
+          <div> <!-- Farouk -->
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.25rem;"> <!-- Farouk -->
+              <span class="dl-card-title">قناة يوتيوب</span> <!-- Farouk -->
+              <span class="dl-card-badge">YouTube</span> <!-- Farouk -->
+            </div> <!-- Farouk -->
+            <p class="dl-card-desc">مقاطع الفيديو والتلاوات على قناة الشيخ الرسمية</p> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="dl-card-footer"> <!-- Farouk -->
+            <span class="dl-card-size">قناة كاملة</span> <!-- Farouk -->
+            <span class="dl-card-open">فتح ↗</span> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </a> <!-- Farouk -->
+
+      </div> <!-- Farouk -->
+
+      <!-- Featured direct downloads --> <!-- Farouk -->
+      <div class="feat-dl"> <!-- Farouk -->
+        <div class="feat-dl-header">📁 تحميل مباشر — سور مختارة</div> <!-- Farouk -->
+
+        <!-- Row template — repeated for each featured surah --> <!-- Farouk -->
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">1</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة الفاتحة</div><div class="feat-dl-info">7 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/001.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/001.mp3" download="surah-الفاتحة.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">2</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة البقرة</div><div class="feat-dl-info">286 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/002.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/002.mp3" download="surah-البقرة.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">18</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة الكهف</div><div class="feat-dl-info">110 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/018.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/018.mp3" download="surah-الكهف.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">36</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة يس</div><div class="feat-dl-info">83 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/036.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/036.mp3" download="surah-يس.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">55</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة الرحمن</div><div class="feat-dl-info">78 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/055.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/055.mp3" download="surah-الرحمن.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">67</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة الملك</div><div class="feat-dl-info">30 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/067.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/067.mp3" download="surah-الملك.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">112</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة الإخلاص</div><div class="feat-dl-info">4 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/112.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/112.mp3" download="surah-الاخلاص.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">113</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة الفلق</div><div class="feat-dl-info">5 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/113.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/113.mp3" download="surah-الفلق.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-row"> <!-- Farouk -->
+          <div class="feat-dl-left"> <!-- Farouk -->
+            <div class="feat-dl-num">114</div> <!-- Farouk -->
+            <div><div class="feat-dl-name">سورة الناس</div><div class="feat-dl-info">6 آية — MP3</div></div> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="feat-dl-btns"> <!-- Farouk -->
+            <a class="btn btn-secondary" style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/114.mp3" target="_blank">🎵 استماع</a> <!-- Farouk -->
+            <a class="btn btn-primary"   style="padding:0.4rem 0.75rem;font-size:0.8rem;" href="https://server8.mp3quran.net/afs/114.mp3" download="surah-الناس.mp3">⬇ تحميل</a> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="feat-dl-footer">جميع الملفات مجانية للاستخدام الشخصي — المصدر: mp3quran.net</div> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+    </div> <!-- Farouk -->
+  </div> <!-- Farouk -->
+</div><!-- /page-downloads --> <!-- Farouk -->
+
+<!-- ============================================================
+     PAGE: VIDEOS
+     ============================================================ --> <!-- Farouk -->
+<div id="page-videos" class="page"> <!-- Farouk -->
+  <div class="section"> <!-- Farouk -->
+    <div class="container"> <!-- Farouk -->
+
+      <div class="page-header"> <!-- Farouk -->
+        <div class="page-header-icon" style="background:#dc2626;">▶️</div> <!-- Farouk -->
+        <h1>الفيديوهات</h1> <!-- Farouk -->
+        <p style="margin-bottom:1rem;">مقاطع ومجموعات من قناة الشيخ على يوتيوب</p> <!-- Farouk -->
+        <a class="btn btn-danger" href="https://www.youtube.com/channel/UCmEQwRROa-hTlySNvMtFWnw" target="_blank" rel="noopener"> <!-- Farouk -->
+          ▶ اشترك في القناة <!-- Farouk -->
+        </a> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <div class="video-grid"> <!-- Farouk -->
+
+        <div class="video-card"> <!-- Farouk -->
+          <div class="video-embed"> <!-- Farouk -->
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UUmEQwRROa-hTlySNvMtFWnw" title="أحدث التلاوات" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="video-info"> <!-- Farouk -->
+            <h3>أحدث التلاوات</h3> <!-- Farouk -->
+            <p>آخر ما نشره الشيخ على قناته الرسمية</p> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <div class="video-card"> <!-- Farouk -->
+          <div class="video-embed"> <!-- Farouk -->
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UUmEQwRROa-hTlySNvMtFWnw" title="ختمات القرآن الكريم" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> <!-- Farouk -->
+          </div> <!-- Farouk -->
+          <div class="video-info"> <!-- Farouk -->
+            <h3>ختمات القرآن الكريم</h3> <!-- Farouk -->
+            <p>ختمات كاملة لأجزاء وسور القرآن الكريم</p> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+      </div> <!-- Farouk -->
+
+      <div class="yt-banner"> <!-- Farouk -->
+        <h2>🎬 القناة الرسمية على يوتيوب</h2> <!-- Farouk -->
+        <p>اشترك ليصلك كل جديد من تلاوات وإعلانات الشيخ عبد الرحمن الزواوي</p> <!-- Farouk -->
+        <a class="btn btn-danger" href="https://www.youtube.com/channel/UCmEQwRROa-hTlySNvMtFWnw" target="_blank" rel="noopener"> <!-- Farouk -->
+          ▶ زيارة القناة <!-- Farouk -->
+        </a> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+    </div> <!-- Farouk -->
+  </div> <!-- Farouk -->
+</div><!-- /page-videos --> <!-- Farouk -->
+
+<!-- ============================================================
+     PAGE: CONTACT
+     ============================================================ --> <!-- Farouk -->
+<div id="page-contact" class="page"> <!-- Farouk -->
+  <div class="section"> <!-- Farouk -->
+    <div class="container"> <!-- Farouk -->
+
+      <div class="page-header"> <!-- Farouk -->
+        <div class="page-header-icon">✉️</div> <!-- Farouk -->
+        <h1>اتصل بنا</h1> <!-- Farouk -->
+        <p>نسعد بتواصلكم وإقتراحاتكم الكريمة</p> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <!-- Facebook primary CTA --> <!-- Farouk -->
+      <div class="fb-banner"> <!-- Farouk -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:0.75rem;"> <!-- Farouk -->
+          <div style="width:48px;height:48px;background:#1877f2;border-radius:0.75rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;box-shadow:var(--shadow);">📘</div> <!-- Farouk -->
+          <div style="text-align:right;"> <!-- Farouk -->
+            <h2 style="margin:0;">تواصل مع الشيخ على فيسبوك</h2> <!-- Farouk -->
+            <p style="margin:0;">الصفحة الرسمية — أسرع وسيلة للتواصل</p> <!-- Farouk -->
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+        <a class="btn btn-blue" href="https://www.facebook.com/AbdElRahmanElzwawy" target="_blank" rel="noopener"> <!-- Farouk -->
+          📘 فتح صفحة فيسبوك ↗ <!-- Farouk -->
+        </a> <!-- Farouk -->
+      </div> <!-- Farouk -->
+
+      <div class="contact-grid"> <!-- Farouk -->
+
+        <!-- Contact links list --> <!-- Farouk -->
+        <div> <!-- Farouk -->
+          <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">📱 قنوات التواصل الأخرى</h2> <!-- Farouk -->
+          <div class="contact-list"> <!-- Farouk -->
+
+            <a class="contact-link" href="https://www.facebook.com/AbdElRahmanElzwawy" target="_blank" rel="noopener"> <!-- Farouk -->
+              <div class="contact-link-icon" style="background:#1877f2;">📘</div> <!-- Farouk -->
+              <div><div class="contact-link-name">فيسبوك</div><div class="contact-link-desc">الصفحة الرسمية — رسالة مباشرة على فيسبوك</div></div> <!-- Farouk -->
+              <span class="contact-link-arrow">↗</span> <!-- Farouk -->
+            </a> <!-- Farouk -->
+
+            <a class="contact-link" href="https://t.me/abdelrahmanelzwawy" target="_blank" rel="noopener"> <!-- Farouk -->
+              <div class="contact-link-icon" style="background:#0088cc;">✈️</div> <!-- Farouk -->
+              <div><div class="contact-link-name">تليجرام</div><div class="contact-link-desc">قناة الشيخ على تليجرام</div></div> <!-- Farouk -->
+              <span class="contact-link-arrow">↗</span> <!-- Farouk -->
+            </a> <!-- Farouk -->
+
+            <a class="contact-link" href="https://t.me/shelzwawy" target="_blank" rel="noopener"> <!-- Farouk -->
+              <div class="contact-link-icon" style="background:#0097a7;">✈️</div> <!-- Farouk -->
+              <div><div class="contact-link-name">تليجرام (ثاني)</div><div class="contact-link-desc">القناة الثانية على تليجرام</div></div> <!-- Farouk -->
+              <span class="contact-link-arrow">↗</span> <!-- Farouk -->
+            </a> <!-- Farouk -->
+
+            <a class="contact-link" href="https://www.instagram.com/abdelrahman.elzwawy/" target="_blank" rel="noopener"> <!-- Farouk -->
+              <div class="contact-link-icon" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);">📷</div> <!-- Farouk -->
+              <div><div class="contact-link-name">إنستجرام</div><div class="contact-link-desc">متابعة على انستجرام</div></div> <!-- Farouk -->
+              <span class="contact-link-arrow">↗</span> <!-- Farouk -->
+            </a> <!-- Farouk -->
+
+            <a class="contact-link" href="https://maps.app.goo.gl/VqNXrqVBTsYTkQi6A" target="_blank" rel="noopener"> <!-- Farouk -->
+              <div class="contact-link-icon" style="background:#16a34a;">📍</div> <!-- Farouk -->
+              <div><div class="contact-link-name">موقع المسجد</div><div class="contact-link-desc">عنوان المسجد على الخريطة</div></div> <!-- Farouk -->
+              <span class="contact-link-arrow">↗</span> <!-- Farouk -->
+            </a> <!-- Farouk -->
+
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+        <!-- Info card --> <!-- Farouk -->
+        <div> <!-- Farouk -->
+          <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">💬 معلومات التواصل</h2> <!-- Farouk -->
+          <div class="contact-info-card"> <!-- Farouk -->
+
+            <div class="contact-info-row"> <!-- Farouk -->
+              <div class="contact-info-icon" style="background:color-mix(in srgb, var(--primary) 15%, transparent);color:var(--primary);">📘</div> <!-- Farouk -->
+              <div><div class="contact-info-label">فيسبوك (الموصى به)</div><div class="contact-info-text">أرسل رسالة مباشرة عبر صفحة الشيخ الرسمية للرد السريع</div></div> <!-- Farouk -->
+            </div> <!-- Farouk -->
+
+            <div class="contact-info-row"> <!-- Farouk -->
+              <div class="contact-info-icon" style="background:rgba(0,136,204,0.15);color:#0088cc;">✈️</div> <!-- Farouk -->
+              <div><div class="contact-info-label">تليجرام</div><div class="contact-info-text">انضم للقناة ليصلك كل جديد ومتابعة التلاوات</div></div> <!-- Farouk -->
+            </div> <!-- Farouk -->
+
+            <div class="contact-info-row"> <!-- Farouk -->
+              <div class="contact-info-icon" style="background:rgba(22,163,74,0.15);color:#16a34a;">📍</div> <!-- Farouk -->
+              <div><div class="contact-info-label">موقع المسجد</div><div class="contact-info-text">يمكن زيارة الشيخ في المسجد — اضغط للخريطة</div></div> <!-- Farouk -->
+            </div> <!-- Farouk -->
+
+          </div> <!-- Farouk -->
+        </div> <!-- Farouk -->
+
+      </div> <!-- Farouk -->
+
+    </div> <!-- Farouk -->
+  </div> <!-- Farouk -->
+</div><!-- /page-contact --> <!-- Farouk -->
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ --> <!-- Farouk -->
+<footer class="footer"> <!-- Farouk -->
+  <div class="footer-links"> <!-- Farouk -->
+    <span class="footer-link" data-goto="home" onclick="showPage('home')">الرئيسية</span> <!-- Farouk -->
+    <span class="footer-link" data-goto="quran" onclick="showPage('quran')">المصحف</span> <!-- Farouk -->
+    <span class="footer-link" data-goto="downloads" onclick="showPage('downloads')">التحميلات</span> <!-- Farouk -->
+    <span class="footer-link" data-goto="videos" onclick="showPage('videos')">الفيديوهات</span> <!-- Farouk -->
+    <span class="footer-link" data-goto="contact" onclick="showPage('contact')">اتصل بنا</span> <!-- Farouk -->
+  </div> <!-- Farouk -->
+  <p>© 2025 <strong>الشيخ عبد الرحمن الزواوي</strong> — جميع الحقوق محفوظة | تصميم: Farouk</p> <!-- Farouk -->
+</footer> <!-- Farouk -->
+
+<script src="./app.js"></script> <!-- Farouk -->
+</body> <!-- Farouk -->
+</html> <!-- Farouk -->

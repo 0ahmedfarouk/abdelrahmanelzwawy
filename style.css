@@ -1,0 +1,982 @@
+/* style.css — Farouk */
+/* =============================================
+   الشيخ عبد الرحمن الزواوي — موقع Static
+   تصميم: Farouk
+   ============================================= */
+
+/* ====== FONTS ====== */ /* Farouk */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap'); /* Farouk */
+
+/* ====== CSS VARIABLES — LIGHT MODE ====== */ /* Farouk */
+:root { /* Farouk */
+  --bg:            hsl(150,20%,97%); /* Farouk */
+  --fg:            hsl(150,25%,10%); /* Farouk */
+  --card:          hsl(150,20%,99%); /* Farouk */
+  --card-fg:       hsl(150,25%,10%); /* Farouk */
+  --border:        hsl(150,15%,85%); /* Farouk */
+  --muted:         hsl(150,15%,92%); /* Farouk */
+  --muted-fg:      hsl(150,15%,45%); /* Farouk */
+  --primary:       hsl(155,60%,35%); /* Farouk */
+  --primary-fg:    #fff; /* Farouk */
+  --secondary:     hsl(155,30%,88%); /* Farouk */
+  --secondary-fg:  hsl(155,50%,20%); /* Farouk */
+  --accent:        hsl(220,60%,50%); /* Farouk */
+  --radius:        0.625rem; /* Farouk */
+  --shadow:        0 4px 12px rgba(0,0,0,0.10); /* Farouk */
+  --shadow-lg:     0 10px 24px rgba(0,0,0,0.14); /* Farouk */
+  --font:          'Cairo', 'Tajawal', sans-serif; /* Farouk */
+} /* Farouk */
+
+/* ====== DARK MODE ====== */ /* Farouk */
+body.dark { /* Farouk */
+  --bg:            hsl(155,30%,5%); /* Farouk */
+  --fg:            hsl(150,15%,92%); /* Farouk */
+  --card:          hsl(155,25%,8%); /* Farouk */
+  --card-fg:       hsl(150,15%,90%); /* Farouk */
+  --border:        hsl(155,20%,18%); /* Farouk */
+  --muted:         hsl(155,20%,14%); /* Farouk */
+  --muted-fg:      hsl(150,15%,55%); /* Farouk */
+  --primary:       hsl(155,55%,45%); /* Farouk */
+  --primary-fg:    #fff; /* Farouk */
+  --secondary:     hsl(155,20%,15%); /* Farouk */
+  --secondary-fg:  hsl(155,55%,60%); /* Farouk */
+  --shadow:        0 4px 12px rgba(0,0,0,0.40); /* Farouk */
+  --shadow-lg:     0 10px 24px rgba(0,0,0,0.50); /* Farouk */
+} /* Farouk */
+
+/* ====== RESET & BASE ====== */ /* Farouk */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } /* Farouk */
+
+html { /* Farouk */
+  direction: rtl; /* Farouk */
+  scroll-behavior: smooth; /* Farouk */
+  font-size: 16px; /* Farouk */
+} /* Farouk */
+
+body { /* Farouk */
+  font-family: var(--font); /* Farouk */
+  background: var(--bg); /* Farouk */
+  color: var(--fg); /* Farouk */
+  direction: rtl; /* Farouk */
+  min-height: 100vh; /* Farouk */
+  transition: background 0.3s, color 0.3s; /* Farouk */
+  line-height: 1.6; /* Farouk */
+} /* Farouk */
+
+a { color: inherit; text-decoration: none; } /* Farouk */
+button { font-family: var(--font); cursor: pointer; border: none; background: none; } /* Farouk */
+input, textarea { font-family: var(--font); } /* Farouk */
+img { max-width: 100%; display: block; } /* Farouk */
+
+/* ====== SCROLLBAR ====== */ /* Farouk */
+::-webkit-scrollbar { width: 6px; } /* Farouk */
+::-webkit-scrollbar-track { background: var(--muted); } /* Farouk */
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; } /* Farouk */
+
+/* ====== LAYOUT ====== */ /* Farouk */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; } /* Farouk */
+.container-sm { max-width: 800px; margin: 0 auto; padding: 0 1rem; } /* Farouk */
+.container-xs { max-width: 700px; margin: 0 auto; padding: 0 1rem; } /* Farouk */
+
+/* ====== PAGE SYSTEM ====== */ /* Farouk */
+.page { display: none; min-height: 80vh; } /* Farouk */
+.page.active { display: block; } /* Farouk */
+
+/* ====== NAVBAR ====== */ /* Farouk */
+.navbar { /* Farouk */
+  position: sticky; /* Farouk */
+  top: 0; /* Farouk */
+  z-index: 100; /* Farouk */
+  background: color-mix(in srgb, var(--bg) 85%, transparent); /* Farouk */
+  backdrop-filter: blur(12px); /* Farouk */
+  -webkit-backdrop-filter: blur(12px); /* Farouk */
+  border-bottom: 1px solid var(--border); /* Farouk */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05); /* Farouk */
+} /* Farouk */
+
+.navbar-inner { /* Farouk */
+  max-width: 1200px; /* Farouk */
+  margin: 0 auto; /* Farouk */
+  padding: 0.75rem 1rem; /* Farouk */
+  display: flex; /* Farouk */
+  align-items: center; /* Farouk */
+  justify-content: space-between; /* Farouk */
+  gap: 1rem; /* Farouk */
+} /* Farouk */
+
+.navbar-logo { /* Farouk */
+  display: flex; /* Farouk */
+  align-items: center; /* Farouk */
+  gap: 0.6rem; /* Farouk */
+  cursor: pointer; /* Farouk */
+} /* Farouk */
+
+.logo-icon { /* Farouk */
+  width: 36px; height: 36px; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  background: var(--primary); /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  font-size: 1.1rem; /* Farouk */
+  flex-shrink: 0; /* Farouk */
+} /* Farouk */
+
+.logo-text { /* Farouk */
+  font-weight: 700; /* Farouk */
+  font-size: 0.9rem; /* Farouk */
+  color: var(--fg); /* Farouk */
+  display: none; /* Farouk */
+} /* Farouk */
+
+@media (min-width: 600px) { .logo-text { display: block; } } /* Farouk */
+
+.navbar-links { /* Farouk */
+  display: none; /* Farouk */
+  align-items: center; /* Farouk */
+  gap: 0.25rem; /* Farouk */
+} /* Farouk */
+
+@media (min-width: 768px) { .navbar-links { display: flex; } } /* Farouk */
+
+.nav-link { /* Farouk */
+  padding: 0.4rem 1rem; /* Farouk */
+  border-radius: var(--radius); /* Farouk */
+  font-size: 0.875rem; /* Farouk */
+  font-weight: 500; /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  cursor: pointer; /* Farouk */
+  transition: background 0.2s, color 0.2s; /* Farouk */
+  user-select: none; /* Farouk */
+} /* Farouk */
+
+.nav-link:hover { background: var(--muted); color: var(--fg); } /* Farouk */
+.nav-link.active { background: var(--primary); color: var(--primary-fg); } /* Farouk */
+
+.navbar-actions { display: flex; align-items: center; gap: 0.5rem; } /* Farouk */
+
+.btn-icon { /* Farouk */
+  width: 36px; height: 36px; /* Farouk */
+  border-radius: var(--radius); /* Farouk */
+  background: var(--muted); /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  cursor: pointer; /* Farouk */
+  font-size: 1.1rem; /* Farouk */
+  transition: background 0.2s; /* Farouk */
+  border: none; /* Farouk */
+  color: var(--fg); /* Farouk */
+} /* Farouk */
+
+.btn-icon:hover { background: var(--border); } /* Farouk */
+
+/* Mobile Menu Toggle */ /* Farouk */
+.btn-menu { display: flex; } /* Farouk */
+@media (min-width: 768px) { .btn-menu { display: none; } } /* Farouk */
+
+/* Mobile Menu */ /* Farouk */
+.mobile-menu { /* Farouk */
+  display: none; /* Farouk */
+  flex-direction: column; /* Farouk */
+  gap: 0.25rem; /* Farouk */
+  padding: 0.75rem 1rem; /* Farouk */
+  border-top: 1px solid var(--border); /* Farouk */
+  background: var(--bg); /* Farouk */
+} /* Farouk */
+
+.mobile-menu.open { display: flex; } /* Farouk */
+
+.mobile-nav-link { /* Farouk */
+  padding: 0.6rem 1rem; /* Farouk */
+  border-radius: var(--radius); /* Farouk */
+  font-size: 0.9rem; /* Farouk */
+  font-weight: 500; /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  cursor: pointer; /* Farouk */
+  transition: background 0.2s, color 0.2s; /* Farouk */
+} /* Farouk */
+
+.mobile-nav-link:hover { background: var(--muted); color: var(--fg); } /* Farouk */
+.mobile-nav-link.active { background: var(--primary); color: var(--primary-fg); } /* Farouk */
+
+/* ====== HERO SECTION ====== */ /* Farouk */
+.hero { /* Farouk */
+  position: relative; /* Farouk */
+  overflow: hidden; /* Farouk */
+  padding: 5rem 1rem 3.5rem; /* Farouk */
+  text-align: center; /* Farouk */
+} /* Farouk */
+
+.hero-particles { /* Farouk */
+  position: absolute; /* Farouk */
+  inset: 0; /* Farouk */
+  pointer-events: none; /* Farouk */
+  overflow: hidden; /* Farouk */
+} /* Farouk */
+
+.hero-content { position: relative; z-index: 1; } /* Farouk */
+
+/* Avatar */ /* Farouk */
+.avatar-wrap { display: inline-block; position: relative; margin-bottom: 1.5rem; } /* Farouk */
+.avatar { /* Farouk */
+  width: 9rem; height: 9rem; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  background: linear-gradient(135deg, var(--primary), var(--accent)); /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  font-size: 3.5rem; /* Farouk */
+  margin: 0 auto; /* Farouk */
+  box-shadow: var(--shadow-lg); /* Farouk */
+  border: 4px solid color-mix(in srgb, var(--primary) 30%, transparent); /* Farouk */
+} /* Farouk */
+
+.avatar-badge { /* Farouk */
+  position: absolute; /* Farouk */
+  bottom: 0.5rem; /* Farouk */
+  left: 50%; /* Farouk */
+  transform: translateX(-50%); /* Farouk */
+  background: var(--primary); /* Farouk */
+  color: var(--primary-fg); /* Farouk */
+  font-size: 0.7rem; /* Farouk */
+  padding: 0.15rem 0.75rem; /* Farouk */
+  border-radius: 999px; /* Farouk */
+  white-space: nowrap; /* Farouk */
+  font-weight: 600; /* Farouk */
+} /* Farouk */
+
+/* Glitch Title */ /* Farouk */
+.glitch-text { /* Farouk */
+  position: relative; /* Farouk */
+  display: inline-block; /* Farouk */
+  font-size: clamp(1.5rem, 5vw, 2.8rem); /* Farouk */
+  font-weight: 800; /* Farouk */
+  color: var(--fg); /* Farouk */
+  margin-bottom: 0.75rem; /* Farouk */
+} /* Farouk */
+
+.glitch-text::before, .glitch-text::after { /* Farouk */
+  content: attr(data-text); /* Farouk */
+  position: absolute; /* Farouk */
+  top: 0; right: 0; left: 0; bottom: 0; /* Farouk */
+  opacity: 0.8; /* Farouk */
+} /* Farouk */
+
+.glitch-text::before { animation: glitch 3s infinite linear alternate-reverse; color: #0af; } /* Farouk */
+.glitch-text::after  { animation: glitch 2.5s infinite linear alternate;         color: #0f6; } /* Farouk */
+
+@keyframes glitch { /* Farouk */
+  0%   { clip-path: inset(0 0 95% 0);  transform: translate(-2px,0); } /* Farouk */
+  10%  { clip-path: inset(10% 0 80% 0); transform: translate(2px,0);  } /* Farouk */
+  25%  { clip-path: inset(30% 0 60% 0); transform: translate(-2px,0); } /* Farouk */
+  50%  { clip-path: inset(55% 0 35% 0); transform: translate(2px,0);  } /* Farouk */
+  75%  { clip-path: inset(75% 0 15% 0); transform: translate(-1px,0); } /* Farouk */
+  100% { clip-path: inset(0 0 100% 0);  transform: translate(0);      } /* Farouk */
+} /* Farouk */
+
+/* Typing */ /* Farouk */
+.typing-line { /* Farouk */
+  min-height: 2rem; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  margin-bottom: 1.5rem; /* Farouk */
+} /* Farouk */
+
+.typing-text { /* Farouk */
+  color: var(--primary); /* Farouk */
+  font-size: 1.1rem; /* Farouk */
+  font-weight: 600; /* Farouk */
+} /* Farouk */
+
+.typing-text::after { /* Farouk */
+  content: '|'; /* Farouk */
+  animation: blink 1s step-end infinite; /* Farouk */
+  color: var(--primary); /* Farouk */
+} /* Farouk */
+
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } } /* Farouk */
+
+/* Bio */ /* Farouk */
+.hero-bio { /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  max-width: 600px; /* Farouk */
+  margin: 0 auto 2rem; /* Farouk */
+  font-size: 1rem; /* Farouk */
+  line-height: 1.8; /* Farouk */
+} /* Farouk */
+
+/* Hero Buttons */ /* Farouk */
+.hero-buttons { /* Farouk */
+  display: flex; flex-wrap: wrap; /* Farouk */
+  align-items: center; justify-content: center; /* Farouk */
+  gap: 0.75rem; /* Farouk */
+  margin-bottom: 2rem; /* Farouk */
+} /* Farouk */
+
+/* ====== BUTTONS ====== */ /* Farouk */
+.btn { /* Farouk */
+  display: inline-flex; align-items: center; gap: 0.5rem; /* Farouk */
+  padding: 0.75rem 1.5rem; /* Farouk */
+  border-radius: 999px; /* Farouk */
+  font-size: 0.95rem; /* Farouk */
+  font-weight: 600; /* Farouk */
+  cursor: pointer; /* Farouk */
+  border: none; /* Farouk */
+  font-family: var(--font); /* Farouk */
+  transition: opacity 0.2s, transform 0.1s; /* Farouk */
+  text-decoration: none; /* Farouk */
+  line-height: 1; /* Farouk */
+} /* Farouk */
+
+.btn:active { transform: scale(0.96); } /* Farouk */
+.btn:hover  { opacity: 0.9; } /* Farouk */
+
+.btn-primary { background: var(--primary); color: var(--primary-fg); box-shadow: var(--shadow); } /* Farouk */
+.btn-secondary { background: var(--secondary); color: var(--secondary-fg); border: 1px solid var(--border); } /* Farouk */
+.btn-danger  { background: #dc2626; color: #fff; } /* Farouk */
+.btn-blue    { background: #2563eb; color: #fff; } /* Farouk */
+.btn-sky     { background: #0ea5e9; color: #fff; } /* Farouk */
+
+/* ====== PARTICLES ====== */ /* Farouk */
+@keyframes float-particle { /* Farouk */
+  0%   { transform: translateY(0)   translateX(0);   opacity: 0;   } /* Farouk */
+  10%  { opacity: 0.6; } /* Farouk */
+  90%  { opacity: 0.4; } /* Farouk */
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; } /* Farouk */
+} /* Farouk */
+
+.particle { /* Farouk */
+  position: absolute; /* Farouk */
+  width: 3px; height: 3px; /* Farouk */
+  background: var(--primary); /* Farouk */
+  border-radius: 50%; /* Farouk */
+  animation: float-particle linear infinite; /* Farouk */
+} /* Farouk */
+
+/* ====== SECTION WRAPPERS ====== */ /* Farouk */
+.section { padding: 3rem 1rem; } /* Farouk */
+.section-muted { padding: 3rem 1rem; background: color-mix(in srgb, var(--muted) 40%, transparent); } /* Farouk */
+.section-title { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; } /* Farouk */
+.section-sub   { color: var(--muted-fg); text-align: center; font-size: 0.9rem; margin-bottom: 2rem; } /* Farouk */
+
+/* ====== SOCIAL GRID ====== */ /* Farouk */
+.social-grid { /* Farouk */
+  display: grid; /* Farouk */
+  grid-template-columns: repeat(2, 1fr); /* Farouk */
+  gap: 0.75rem; /* Farouk */
+} /* Farouk */
+
+@media (min-width: 480px)  { .social-grid { grid-template-columns: repeat(3, 1fr); } } /* Farouk */
+@media (min-width: 640px)  { .social-grid { grid-template-columns: repeat(4, 1fr); } } /* Farouk */
+@media (min-width: 900px)  { .social-grid { grid-template-columns: repeat(5, 1fr); } } /* Farouk */
+
+.social-card { /* Farouk */
+  display: flex; flex-direction: column; /* Farouk */
+  align-items: center; justify-content: center; /* Farouk */
+  gap: 0.5rem; /* Farouk */
+  padding: 1rem 0.5rem; /* Farouk */
+  border-radius: 1rem; /* Farouk */
+  color: #fff; /* Farouk */
+  font-weight: 600; /* Farouk */
+  font-size: 0.85rem; /* Farouk */
+  text-align: center; /* Farouk */
+  cursor: pointer; /* Farouk */
+  transition: transform 0.25s, box-shadow 0.25s; /* Farouk */
+  box-shadow: var(--shadow); /* Farouk */
+  text-decoration: none; /* Farouk */
+} /* Farouk */
+
+.social-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); } /* Farouk */
+.social-card .sc-icon { font-size: 1.4rem; line-height: 1; } /* Farouk */
+
+.sc-facebook  { background: #1877f2; } /* Farouk */
+.sc-youtube   { background: #ff0000; } /* Farouk */
+.sc-twitter   { background: #111; } /* Farouk */
+.sc-instagram { background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); } /* Farouk */
+.sc-telegram  { background: #0088cc; } /* Farouk */
+.sc-telegram2 { background: #0097a7; } /* Farouk */
+.sc-tiktok    { background: #111; } /* Farouk */
+.sc-soundcloud{ background: #ff5500; } /* Farouk */
+.sc-map       { background: #16a34a; } /* Farouk */
+.sc-whatsapp  { background: #25d366; } /* Farouk */
+
+/* ====== AUDIO PLAYER ====== */ /* Farouk */
+.player { /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  padding: 1.5rem; /* Farouk */
+  box-shadow: var(--shadow-lg); /* Farouk */
+} /* Farouk */
+
+.player-title { text-align: center; margin-bottom: 1.25rem; } /* Farouk */
+.player-title h3 { font-size: 1.2rem; font-weight: 700; } /* Farouk */
+.player-title p  { font-size: 0.8rem; color: var(--muted-fg); margin-top: 0.2rem; } /* Farouk */
+
+/* Progress bar */ /* Farouk */
+.player-seek { width: 100%; margin-bottom: 0.5rem; } /* Farouk */
+
+.audio-range { /* Farouk */
+  -webkit-appearance: none; /* Farouk */
+  appearance: none; /* Farouk */
+  width: 100%; /* Farouk */
+  height: 6px; /* Farouk */
+  border-radius: 3px; /* Farouk */
+  background: var(--muted); /* Farouk */
+  outline: none; /* Farouk */
+  cursor: pointer; /* Farouk */
+  transition: background 0.1s; /* Farouk */
+} /* Farouk */
+
+.audio-range::-webkit-slider-thumb { /* Farouk */
+  -webkit-appearance: none; /* Farouk */
+  appearance: none; /* Farouk */
+  width: 16px; height: 16px; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  background: var(--primary); /* Farouk */
+  cursor: pointer; /* Farouk */
+  box-shadow: 0 0 6px rgba(0,0,0,0.25); /* Farouk */
+} /* Farouk */
+
+.audio-range::-moz-range-thumb { /* Farouk */
+  width: 16px; height: 16px; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  background: var(--primary); /* Farouk */
+  cursor: pointer; /* Farouk */
+  border: none; /* Farouk */
+} /* Farouk */
+
+.player-time { /* Farouk */
+  display: flex; justify-content: space-between; /* Farouk */
+  font-size: 0.75rem; /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  margin-bottom: 1rem; /* Farouk */
+} /* Farouk */
+
+/* Controls */ /* Farouk */
+.player-controls { /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  gap: 1rem; /* Farouk */
+  margin-bottom: 1rem; /* Farouk */
+} /* Farouk */
+
+.ctrl-btn { /* Farouk */
+  width: 38px; height: 38px; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  font-size: 1.1rem; /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  transition: color 0.2s, background 0.2s; /* Farouk */
+  background: none; border: none; cursor: pointer; /* Farouk */
+} /* Farouk */
+
+.ctrl-btn:hover { color: var(--fg); background: var(--muted); } /* Farouk */
+.ctrl-btn.active { color: var(--primary); } /* Farouk */
+
+.play-btn { /* Farouk */
+  width: 56px; height: 56px; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  background: var(--primary); /* Farouk */
+  color: var(--primary-fg); /* Farouk */
+  font-size: 1.5rem; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  box-shadow: var(--shadow-lg); /* Farouk */
+  transition: opacity 0.2s, transform 0.1s; /* Farouk */
+  cursor: pointer; border: none; /* Farouk */
+} /* Farouk */
+
+.play-btn:hover   { opacity: 0.9; } /* Farouk */
+.play-btn:active  { transform: scale(0.93); } /* Farouk */
+
+.dl-link { /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  font-size: 1.2rem; /* Farouk */
+  text-decoration: none; /* Farouk */
+  transition: color 0.2s; /* Farouk */
+  display: flex; align-items: center; /* Farouk */
+} /* Farouk */
+
+.dl-link:hover { color: var(--primary); } /* Farouk */
+
+/* Volume & Speed */ /* Farouk */
+.player-bottom { /* Farouk */
+  display: flex; align-items: center; /* Farouk */
+  justify-content: space-between; /* Farouk */
+  gap: 1rem; /* Farouk */
+  flex-wrap: wrap; /* Farouk */
+} /* Farouk */
+
+.vol-wrap { display: flex; align-items: center; gap: 0.5rem; flex: 1; min-width: 120px; } /* Farouk */
+.vol-icon { font-size: 1rem; color: var(--muted-fg); flex-shrink: 0; } /* Farouk */
+
+.speed-wrap { display: flex; gap: 0.25rem; flex-wrap: wrap; } /* Farouk */
+.speed-btn { /* Farouk */
+  padding: 0.2rem 0.5rem; /* Farouk */
+  border-radius: 0.35rem; /* Farouk */
+  font-size: 0.7rem; /* Farouk */
+  font-family: monospace; /* Farouk */
+  background: var(--muted); /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  border: none; cursor: pointer; /* Farouk */
+  transition: background 0.15s, color 0.15s; /* Farouk */
+} /* Farouk */
+
+.speed-btn.active { background: var(--primary); color: var(--primary-fg); } /* Farouk */
+
+/* Loader spinner */ /* Farouk */
+@keyframes spin { to { transform: rotate(360deg); } } /* Farouk */
+.spinner { /* Farouk */
+  width: 22px; height: 22px; /* Farouk */
+  border: 3px solid rgba(255,255,255,0.4); /* Farouk */
+  border-top-color: #fff; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  animation: spin 0.8s linear infinite; /* Farouk */
+} /* Farouk */
+
+/* ====== PLAYLIST ====== */ /* Farouk */
+.playlist { /* Farouk */
+  margin-top: 1rem; /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  overflow: hidden; /* Farouk */
+} /* Farouk */
+
+.playlist-header { /* Farouk */
+  padding: 0.75rem 1rem; /* Farouk */
+  border-bottom: 1px solid var(--border); /* Farouk */
+  background: color-mix(in srgb, var(--muted) 40%, transparent); /* Farouk */
+  font-size: 0.85rem; /* Farouk */
+  font-weight: 600; /* Farouk */
+} /* Farouk */
+
+.playlist-body { /* Farouk */
+  max-height: 260px; /* Farouk */
+  overflow-y: auto; /* Farouk */
+} /* Farouk */
+
+.playlist-item { /* Farouk */
+  width: 100%; /* Farouk */
+  display: flex; align-items: center; justify-content: space-between; /* Farouk */
+  padding: 0.6rem 1rem; /* Farouk */
+  border: none; border-bottom: 1px solid var(--border); /* Farouk */
+  background: none; /* Farouk */
+  cursor: pointer; /* Farouk */
+  font-family: var(--font); /* Farouk */
+  font-size: 0.85rem; /* Farouk */
+  color: var(--fg); /* Farouk */
+  text-align: right; /* Farouk */
+  transition: background 0.15s; /* Farouk */
+} /* Farouk */
+
+.playlist-item:hover    { background: color-mix(in srgb, var(--muted) 50%, transparent); } /* Farouk */
+.playlist-item.active   { background: color-mix(in srgb, var(--primary) 10%, transparent); color: var(--primary); } /* Farouk */
+.playlist-item:last-child { border-bottom: none; } /* Farouk */
+
+.pl-num { /* Farouk */
+  width: 24px; height: 24px; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  background: var(--muted); /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  font-size: 0.7rem; /* Farouk */
+  font-weight: 700; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  margin-left: 0.75rem; /* Farouk */
+  flex-shrink: 0; /* Farouk */
+} /* Farouk */
+
+.playlist-item.active .pl-num { background: var(--primary); color: var(--primary-fg); } /* Farouk */
+.pl-item-left { display: flex; align-items: center; } /* Farouk */
+.pl-verses { color: var(--muted-fg); font-size: 0.75rem; } /* Farouk */
+
+.playlist-footer { /* Farouk */
+  padding: 0.6rem 1rem; /* Farouk */
+  border-top: 1px solid var(--border); /* Farouk */
+  text-align: center; /* Farouk */
+} /* Farouk */
+
+/* ====== GLOW CARD ====== */ /* Farouk */
+.glow-card { /* Farouk */
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary) 20%, transparent), var(--shadow); /* Farouk */
+  transition: box-shadow 0.3s; /* Farouk */
+} /* Farouk */
+
+.glow-card:hover { /* Farouk */
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary) 40%, transparent), var(--shadow-lg); /* Farouk */
+} /* Farouk */
+
+/* ====== CARD GRID ====== */ /* Farouk */
+.card-grid-3 { display: grid; grid-template-columns: 1fr; gap: 1rem; } /* Farouk */
+@media (min-width: 560px) { .card-grid-3 { grid-template-columns: repeat(3, 1fr); } } /* Farouk */
+
+.card { /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  padding: 1.5rem; /* Farouk */
+  cursor: pointer; /* Farouk */
+  transition: border-color 0.2s; /* Farouk */
+} /* Farouk */
+
+.card:hover { border-color: color-mix(in srgb, var(--primary) 50%, transparent); } /* Farouk */
+.card-icon { font-size: 2rem; margin-bottom: 0.75rem; } /* Farouk */
+.card-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.25rem; } /* Farouk */
+.card-desc  { color: var(--muted-fg); font-size: 0.85rem; } /* Farouk */
+
+/* ====== PAGE HEADER ====== */ /* Farouk */
+.page-header { text-align: center; margin-bottom: 2rem; } /* Farouk */
+.page-header-icon { /* Farouk */
+  width: 64px; height: 64px; /* Farouk */
+  border-radius: 1rem; /* Farouk */
+  background: var(--primary); /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  font-size: 1.75rem; /* Farouk */
+  margin: 0 auto 1rem; /* Farouk */
+  box-shadow: var(--shadow-lg); /* Farouk */
+} /* Farouk */
+
+.page-header h1 { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 800; margin-bottom: 0.4rem; } /* Farouk */
+.page-header p  { color: var(--muted-fg); } /* Farouk */
+
+/* ====== QURAN PAGE ====== */ /* Farouk */
+.search-row { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem; } /* Farouk */
+@media (min-width: 560px) { .search-row { flex-direction: row; align-items: center; } } /* Farouk */
+
+.search-wrap { position: relative; flex: 1; } /* Farouk */
+.search-icon { /* Farouk */
+  position: absolute; /* Farouk */
+  right: 0.75rem; /* Farouk */
+  top: 50%; transform: translateY(-50%); /* Farouk */
+  font-size: 0.9rem; /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  pointer-events: none; /* Farouk */
+} /* Farouk */
+
+.search-input { /* Farouk */
+  width: 100%; /* Farouk */
+  padding: 0.65rem 2.25rem 0.65rem 1rem; /* Farouk */
+  border-radius: 0.75rem; /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  background: var(--card); /* Farouk */
+  color: var(--fg); /* Farouk */
+  font-size: 0.9rem; /* Farouk */
+  font-family: var(--font); /* Farouk */
+  outline: none; /* Farouk */
+  direction: rtl; /* Farouk */
+  transition: border-color 0.2s, box-shadow 0.2s; /* Farouk */
+} /* Farouk */
+
+.search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent); } /* Farouk */
+.search-input::-webkit-search-cancel-button { display: none; } /* Farouk */
+
+.filter-btns { display: flex; gap: 0.5rem; flex-shrink: 0; } /* Farouk */
+.filter-btn { /* Farouk */
+  padding: 0.55rem 1rem; /* Farouk */
+  border-radius: 0.75rem; /* Farouk */
+  font-size: 0.85rem; /* Farouk */
+  font-weight: 500; /* Farouk */
+  border: none; cursor: pointer; /* Farouk */
+  font-family: var(--font); /* Farouk */
+  background: var(--muted); /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  transition: background 0.15s, color 0.15s; /* Farouk */
+} /* Farouk */
+
+.filter-btn.active { background: var(--primary); color: var(--primary-fg); } /* Farouk */
+.filter-btn:hover:not(.active) { background: var(--border); } /* Farouk */
+
+.stats-line { color: var(--muted-fg); font-size: 0.85rem; margin-bottom: 1rem; } /* Farouk */
+
+.surah-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; } /* Farouk */
+@media (min-width: 480px) { .surah-grid { grid-template-columns: repeat(2, 1fr); } } /* Farouk */
+@media (min-width: 900px) { .surah-grid { grid-template-columns: repeat(3, 1fr); } } /* Farouk */
+
+.surah-card { /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1rem; /* Farouk */
+  padding: 1rem; /* Farouk */
+  transition: border-color 0.2s, background 0.2s; /* Farouk */
+} /* Farouk */
+
+.surah-card.playing { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 5%, var(--card)); } /* Farouk */
+.surah-card:hover { border-color: color-mix(in srgb, var(--primary) 40%, transparent); } /* Farouk */
+
+.surah-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; } /* Farouk */
+.surah-info { display: flex; align-items: center; gap: 0.75rem; } /* Farouk */
+
+.surah-num { /* Farouk */
+  width: 36px; height: 36px; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  background: var(--muted); /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  font-size: 0.75rem; /* Farouk */
+  font-weight: 700; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  flex-shrink: 0; /* Farouk */
+} /* Farouk */
+
+.surah-card.playing .surah-num { background: var(--primary); color: var(--primary-fg); } /* Farouk */
+.surah-name { font-weight: 700; font-size: 0.9rem; } /* Farouk */
+.surah-meta { font-size: 0.75rem; color: var(--muted-fg); } /* Farouk */
+
+.surah-badge { /* Farouk */
+  font-size: 0.7rem; /* Farouk */
+  padding: 0.2rem 0.6rem; /* Farouk */
+  border-radius: 999px; /* Farouk */
+  font-weight: 600; /* Farouk */
+} /* Farouk */
+
+.badge-makki  { background: #fef3c7; color: #92400e; } /* Farouk */
+.badge-madani { background: #dbeafe; color: #1e3a8a; } /* Farouk */
+
+body.dark .badge-makki  { background: rgba(120,80,0,0.3);  color: #fbbf24; } /* Farouk */
+body.dark .badge-madani { background: rgba(30,58,138,0.3); color: #93c5fd; } /* Farouk */
+
+.surah-actions { display: flex; gap: 0.5rem; } /* Farouk */
+.surah-play-btn { /* Farouk */
+  flex: 1; /* Farouk */
+  display: flex; align-items: center; justify-content: center; gap: 0.35rem; /* Farouk */
+  padding: 0.45rem; /* Farouk */
+  border-radius: 0.6rem; /* Farouk */
+  font-size: 0.78rem; /* Farouk */
+  font-weight: 600; /* Farouk */
+  border: none; cursor: pointer; /* Farouk */
+  font-family: var(--font); /* Farouk */
+  background: var(--muted); /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  transition: background 0.15s, color 0.15s; /* Farouk */
+} /* Farouk */
+
+.surah-play-btn.playing { background: var(--primary); color: var(--primary-fg); } /* Farouk */
+.surah-play-btn:hover:not(.playing) { background: var(--border); } /* Farouk */
+
+.surah-dl-btn { /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  padding: 0.45rem 0.6rem; /* Farouk */
+  border-radius: 0.6rem; /* Farouk */
+  background: var(--muted); /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  font-size: 0.85rem; /* Farouk */
+  text-decoration: none; /* Farouk */
+  transition: background 0.15s, color 0.15s; /* Farouk */
+} /* Farouk */
+
+.surah-dl-btn:hover { background: var(--primary); color: var(--primary-fg); } /* Farouk */
+
+/* ====== DOWNLOAD PAGE ====== */ /* Farouk */
+.dl-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem; } /* Farouk */
+@media (min-width: 560px) { .dl-grid { grid-template-columns: repeat(3, 1fr); } } /* Farouk */
+
+.dl-card { /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  padding: 1.5rem; /* Farouk */
+  display: flex; flex-direction: column; gap: 0.75rem; /* Farouk */
+  text-decoration: none; color: inherit; /* Farouk */
+  transition: border-color 0.2s, box-shadow 0.2s; /* Farouk */
+} /* Farouk */
+
+.dl-card:hover { border-color: color-mix(in srgb, var(--primary) 40%, transparent); box-shadow: var(--shadow-lg); } /* Farouk */
+
+.dl-card-icon { /* Farouk */
+  width: 48px; height: 48px; /* Farouk */
+  border-radius: 1rem; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  font-size: 1.5rem; /* Farouk */
+  box-shadow: var(--shadow); /* Farouk */
+} /* Farouk */
+
+.dl-card-title { font-weight: 700; font-size: 1rem; } /* Farouk */
+.dl-card-desc  { font-size: 0.85rem; color: var(--muted-fg); } /* Farouk */
+.dl-card-footer { /* Farouk */
+  display: flex; justify-content: space-between; align-items: center; /* Farouk */
+  padding-top: 0.75rem; /* Farouk */
+  border-top: 1px solid var(--border); /* Farouk */
+  margin-top: auto; /* Farouk */
+} /* Farouk */
+
+.dl-card-size { font-size: 0.75rem; color: var(--muted-fg); } /* Farouk */
+.dl-card-open { font-size: 0.85rem; color: var(--primary); font-weight: 600; } /* Farouk */
+.dl-card-badge { font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 999px; background: var(--muted); color: var(--muted-fg); } /* Farouk */
+
+/* Featured downloads table */ /* Farouk */
+.feat-dl { /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  overflow: hidden; /* Farouk */
+} /* Farouk */
+
+.feat-dl-header { /* Farouk */
+  padding: 1rem 1.5rem; /* Farouk */
+  border-bottom: 1px solid var(--border); /* Farouk */
+  background: color-mix(in srgb, var(--muted) 40%, transparent); /* Farouk */
+  font-weight: 700; /* Farouk */
+  display: flex; align-items: center; gap: 0.5rem; /* Farouk */
+} /* Farouk */
+
+.feat-dl-row { /* Farouk */
+  display: flex; align-items: center; justify-content: space-between; /* Farouk */
+  padding: 0.75rem 1.5rem; /* Farouk */
+  border-bottom: 1px solid var(--border); /* Farouk */
+  transition: background 0.15s; /* Farouk */
+} /* Farouk */
+
+.feat-dl-row:hover { background: color-mix(in srgb, var(--muted) 30%, transparent); } /* Farouk */
+.feat-dl-row:last-of-type { border-bottom: none; } /* Farouk */
+.feat-dl-left { display: flex; align-items: center; gap: 1rem; } /* Farouk */
+
+.feat-dl-num { /* Farouk */
+  width: 32px; height: 32px; /* Farouk */
+  border-radius: 50%; /* Farouk */
+  background: color-mix(in srgb, var(--primary) 15%, transparent); /* Farouk */
+  color: var(--primary); /* Farouk */
+  font-size: 0.8rem; font-weight: 700; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  flex-shrink: 0; /* Farouk */
+} /* Farouk */
+
+.feat-dl-name { font-weight: 600; font-size: 0.9rem; } /* Farouk */
+.feat-dl-info { font-size: 0.75rem; color: var(--muted-fg); } /* Farouk */
+.feat-dl-btns { display: flex; align-items: center; gap: 0.5rem; } /* Farouk */
+
+.feat-dl-footer { /* Farouk */
+  padding: 0.75rem 1.5rem; /* Farouk */
+  background: color-mix(in srgb, var(--muted) 20%, transparent); /* Farouk */
+  text-align: center; /* Farouk */
+  font-size: 0.75rem; /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+} /* Farouk */
+
+/* ====== VIDEO PAGE ====== */ /* Farouk */
+.video-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; } /* Farouk */
+@media (min-width: 680px) { .video-grid { grid-template-columns: repeat(2, 1fr); } } /* Farouk */
+
+.video-card { /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  overflow: hidden; /* Farouk */
+  box-shadow: var(--shadow); /* Farouk */
+} /* Farouk */
+
+.video-embed { /* Farouk */
+  position: relative; /* Farouk */
+  padding-bottom: 56.25%; /* Farouk */
+  height: 0; /* Farouk */
+  overflow: hidden; /* Farouk */
+  background: #000; /* Farouk */
+} /* Farouk */
+
+.video-embed iframe { /* Farouk */
+  position: absolute; /* Farouk */
+  top: 0; left: 0; /* Farouk */
+  width: 100%; height: 100%; /* Farouk */
+  border: none; /* Farouk */
+} /* Farouk */
+
+.video-info { padding: 1rem; } /* Farouk */
+.video-info h3 { font-weight: 700; margin-bottom: 0.25rem; } /* Farouk */
+.video-info p  { font-size: 0.85rem; color: var(--muted-fg); } /* Farouk */
+
+.yt-banner { /* Farouk */
+  margin-top: 2.5rem; /* Farouk */
+  background: color-mix(in srgb, #dc2626 20%, transparent); /* Farouk */
+  border: 1px solid color-mix(in srgb, #dc2626 30%, transparent); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  padding: 2rem; /* Farouk */
+  text-align: center; /* Farouk */
+} /* Farouk */
+
+.yt-banner h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; } /* Farouk */
+.yt-banner p  { color: var(--muted-fg); font-size: 0.9rem; margin-bottom: 1rem; } /* Farouk */
+
+/* ====== CONTACT PAGE ====== */ /* Farouk */
+.fb-banner { /* Farouk */
+  background: color-mix(in srgb, #1877f2 15%, transparent); /* Farouk */
+  border: 1px solid color-mix(in srgb, #1877f2 30%, transparent); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  padding: 1.75rem; /* Farouk */
+  text-align: center; /* Farouk */
+  margin-bottom: 2rem; /* Farouk */
+} /* Farouk */
+
+.fb-banner h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.4rem; } /* Farouk */
+.fb-banner p  { color: var(--muted-fg); font-size: 0.85rem; margin-bottom: 1rem; } /* Farouk */
+
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; } /* Farouk */
+@media (min-width: 680px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } } /* Farouk */
+
+.contact-list { display: flex; flex-direction: column; gap: 0.6rem; } /* Farouk */
+.contact-link { /* Farouk */
+  display: flex; align-items: center; gap: 1rem; /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1rem; /* Farouk */
+  padding: 0.85rem 1rem; /* Farouk */
+  text-decoration: none; color: inherit; /* Farouk */
+  transition: border-color 0.2s; /* Farouk */
+} /* Farouk */
+
+.contact-link:hover { border-color: color-mix(in srgb, var(--primary) 40%, transparent); } /* Farouk */
+.contact-link-icon { /* Farouk */
+  width: 44px; height: 44px; /* Farouk */
+  border-radius: 0.75rem; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  font-size: 1.3rem; /* Farouk */
+  color: #fff; /* Farouk */
+  flex-shrink: 0; /* Farouk */
+  box-shadow: var(--shadow); /* Farouk */
+} /* Farouk */
+
+.contact-link-name { font-weight: 600; font-size: 0.9rem; } /* Farouk */
+.contact-link-desc { font-size: 0.75rem; color: var(--muted-fg); } /* Farouk */
+.contact-link-arrow { margin-right: auto; color: var(--muted-fg); font-size: 0.8rem; } /* Farouk */
+
+.contact-info-card { /* Farouk */
+  background: var(--card); /* Farouk */
+  border: 1px solid var(--border); /* Farouk */
+  border-radius: 1.25rem; /* Farouk */
+  padding: 1.25rem; /* Farouk */
+  display: flex; flex-direction: column; gap: 1rem; /* Farouk */
+} /* Farouk */
+
+.contact-info-row { display: flex; align-items: flex-start; gap: 0.75rem; } /* Farouk */
+.contact-info-icon { /* Farouk */
+  width: 36px; height: 36px; /* Farouk */
+  border-radius: 0.6rem; /* Farouk */
+  display: flex; align-items: center; justify-content: center; /* Farouk */
+  font-size: 1rem; /* Farouk */
+  flex-shrink: 0; /* Farouk */
+  margin-top: 2px; /* Farouk */
+} /* Farouk */
+
+.contact-info-label { font-weight: 600; font-size: 0.85rem; } /* Farouk */
+.contact-info-text  { font-size: 0.78rem; color: var(--muted-fg); margin-top: 0.15rem; } /* Farouk */
+
+/* ====== FOOTER ====== */ /* Farouk */
+.footer { /* Farouk */
+  border-top: 1px solid var(--border); /* Farouk */
+  padding: 2rem 1rem; /* Farouk */
+  text-align: center; /* Farouk */
+  color: var(--muted-fg); /* Farouk */
+  font-size: 0.85rem; /* Farouk */
+} /* Farouk */
+
+.footer strong { color: var(--primary); } /* Farouk */
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1rem; } /* Farouk */
+.footer-link { color: var(--muted-fg); font-size: 0.82rem; cursor: pointer; transition: color 0.2s; } /* Farouk */
+.footer-link:hover { color: var(--primary); } /* Farouk */
+
+/* ====== UTILITIES ====== */ /* Farouk */
+.text-center { text-align: center; } /* Farouk */
+.mt-1 { margin-top: 0.25rem; } /* Farouk */
+.mt-2 { margin-top: 0.5rem;  } /* Farouk */
+.mt-4 { margin-top: 1rem;    } /* Farouk */
+.mt-6 { margin-top: 1.5rem;  } /* Farouk */
+.mb-4 { margin-bottom: 1rem; } /* Farouk */
+.mb-6 { margin-bottom: 1.5rem; } /* Farouk */
+.flex-center { display: flex; align-items: center; justify-content: center; } /* Farouk */
+.gap-2 { gap: 0.5rem; } /* Farouk */
+.hidden { display: none !important; } /* Farouk */
+
+
+/* Sheikh photo logo */ /* Farouk */
+.logo-photo { object-fit: cover; object-position: center 28%; border: 2px solid color-mix(in srgb, var(--primary) 24%, white); box-shadow: var(--shadow); background: var(--card); } /* Farouk */
+.avatar-photo { object-fit: cover; object-position: center 28%; background: var(--card); color: transparent; } /* Farouk */
