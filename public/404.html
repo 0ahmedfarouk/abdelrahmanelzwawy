@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- Farouk -->
+<html lang="ar" dir="rtl"> <!-- Farouk -->
+<head> <!-- Farouk -->
+  <meta charset="UTF-8"> <!-- Farouk -->
+  <title>الشيخ عبد الرحمن الزواوي</title> <!-- Farouk -->
+  <script> <!-- Farouk -->
+    // Farouk - SPA redirect trick for GitHub Pages
+    // When GitHub Pages returns 404 for SPA routes,
+    // this page redirects back to index.html with the path as a query param.
+    var l = window.location; // Farouk
+    l.replace( // Farouk
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + // Farouk
+      l.pathname.split('/').slice(0, 1 + 1).join('/') + // Farouk
+      '/?/' + // Farouk
+      l.pathname.slice(1).split('/').slice(1).join('/').replace(/&/g, '~and~') + // Farouk
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') + // Farouk
+      l.hash // Farouk
+    ); // Farouk
+  </script> <!-- Farouk -->
+</head> <!-- Farouk -->
+<body> <!-- Farouk -->
+  <!-- Farouk - جاري إعادة التوجيه... -->
+  <p style="font-family:Cairo,sans-serif;text-align:center;margin-top:2rem;color:#555"> <!-- Farouk -->
+    جاري إعادة التوجيه... <!-- Farouk -->
+  </p> <!-- Farouk -->
+</body> <!-- Farouk -->
+</html> <!-- Farouk -->
